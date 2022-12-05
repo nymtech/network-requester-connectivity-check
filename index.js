@@ -19,7 +19,7 @@ let results = [];
 
 async function get_services() {
    console.log("grabbing list")
-   await exec("curl https://nymtech.net/.wellknown/connect/service-providers.json > service-providers.json")
+   execSync("curl https://nymtech.net/.wellknown/connect/service-providers.json > service-providers.json")
    let rawdata = fs.readFileSync('./service-providers.json');
    services = JSON.parse(rawdata)
 }
